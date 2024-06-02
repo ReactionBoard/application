@@ -3,7 +3,7 @@
     "discord.js": "^14.15.2",
     "dotenv": "^16.4.5"
   },
-  "name": "reactionboard-bot",
+  "name": "reactionboard",
   "version": "0.2",
   "description": "ReactionBoard is a bot like starboard, you can chose the reaction with more customizations.",
   "main": "dist/index.js",
