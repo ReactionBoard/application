@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "chalk": "^4.1.0",
     "discord.js": "^14.15.2",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "mongoose": "^8.4.1"
   },
   "name": "reactionboard",
   "version": "0.2",
