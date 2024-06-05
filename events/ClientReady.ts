@@ -4,7 +4,7 @@ import { IEventOptions } from "../lib/Interface/Events";
 export const ClientEvent: IEventOptions = {
   name: "ready",
   run: (client: ReactionBoard) => {
-    console.log(`Ready! ${client.user?.username}`);
+    client.logger.info(`Ready! ${client.user?.username}`);
 
     client.DeployChatInputCommands();
   },

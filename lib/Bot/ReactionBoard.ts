@@ -1,4 +1,4 @@
-import process from 'process';
+import process from "process";
 import {
   Client,
   ClientOptions,
@@ -11,8 +11,8 @@ import fs from "node:fs";
 import { IEventOptions } from "../Interface/Events";
 import { ICommandFileStructure } from "../Interface/Commands";
 import { Validator } from "../../helpers/validator";
-import mongoose from 'mongoose';
-import { Logger } from '../Logger/logger';
+import mongoose from "mongoose";
+import { Logger } from "../Logger/logger";
 
 export class ReactionBoard extends Client {
   public constructor(Options: ClientOptions) {
@@ -24,6 +24,7 @@ export class ReactionBoard extends Client {
 
     super(Options);
 
+    this.connectMongoClient();
     this.Events();
     this.Commands();
   }
@@ -69,7 +70,7 @@ export class ReactionBoard extends Client {
         `../../events/${file_name.split(".").at(0)}`,
       ).ClientEvent;
       if (!file.name || !file.run) {
-        console.log(`Missing #name or #run properties in ${file_name}`);
+        this.logger.warn(`Missing #name or #run properties in ${file_name}`);
       } else {
         this.on(file.name, (...args: any) => file.run(...args));
       }

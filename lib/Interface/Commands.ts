@@ -8,7 +8,7 @@ import {
 export interface IRunOptions {
   messageRun?: (message: Message, args: string[], options: any) => any;
   chatInputRun?: (interaction: ChatInputCommandInteraction) => any;
-  subCommands?: [{ name: string; value: string }];
+  subCommands?: { name: string; value: string }[];
   commands?: any;
 }
 
